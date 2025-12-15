@@ -1,3 +1,7 @@
+.completed {
+  text-decoration: line-through;
+  color: #6c757d !important;
+}
 .App {
   text-align: center;
 }
@@ -22,6 +26,63 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.todo-form {
+  margin-bottom: 24px;
+}
+.todo-form input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+}
+.todo-form button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #61dafb;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todo-form button:hover {
+  background: #21a1f3;
+  color: #fff;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+  width: 320px;
+  margin: 0 auto;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #444;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.todo-item span {
+  flex: 1;
+  text-align: left;
+}
+.todo-item button {
+  margin-left: 8px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: none;
+  background: #888;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todo-item button:hover {
+  background: #e57373;
 }
 
 .App-link {
