@@ -50,53 +50,58 @@ function App() {
   };
 
   return (
-    <div className="bg-primary min-vh-100 py-5">
-      <div className="container" style={{ maxWidth: 480 }}>
-        <div className="card shadow">
-          <div className="card-body">
-            <h1 className="card-title text-center mb-4 text-primary">業務用Todo管理アプリ</h1>
-            <form className="row g-2 mb-3" onSubmit={handleAddTask}>
-              <div className="col-9">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="新しいタスクを入力"
-                  value={input}
-                  onChange={e => setInput(e.target.value)}
-                />
-              </div>
-              <div className="col-3 d-grid">
-                <button type="submit" className="btn btn-primary">追加</button>
-              </div>
-            </form>
-            {error && <div className="alert alert-warning py-1 mb-2">{error}</div>}
-            <ul className="list-group">
-              {tasks.length === 0 ? (
-                <li className="list-group-item text-center text-secondary">タスクはありません</li>
-              ) : (
-                tasks.map((task, idx) => (
-                  <li key={task.id} className="list-group-item d-flex align-items-center justify-content-between">
-                    <span className={task.completed ? 'completed flex-grow-1' : 'flex-grow-1'} style={task.completed ? { color: '#6c757d' } : {}}>
-                      {task.text}
-                    </span>
-                    <button
-                      className={task.completed ? 'btn btn-outline-secondary btn-sm ms-2' : 'btn btn-outline-success btn-sm ms-2'}
-                      onClick={() => handleCompleteTask(task.id)}
-                    >
-                      {task.completed ? '未完了' : '完了'}
-                    </button>
-                    <button
-                      className="btn btn-outline-danger btn-sm ms-2"
-                      onClick={() => handleDeleteTask(task.id)}
-                    >削除</button>
-                  </li>
-                ))
-              )}
-            </ul>
+    <>
+      <div className="bg-primary min-vh-100 py-5">
+        <div className="container" style={{ maxWidth: 480 }}>
+          <div className="card shadow">
+            <div className="card-body">
+              <h1 className="card-title text-center mb-4 text-primary">業務用Todo管理アプリ</h1>
+              <form className="row g-2 mb-3" onSubmit={handleAddTask}>
+                <div className="col-9">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="新しいタスクを入力"
+                    value={input}
+                    onChange={e => setInput(e.target.value)}
+                  />
+                </div>
+                <div className="col-3 d-grid">
+                  <button type="submit" className="btn btn-primary">追加</button>
+                </div>
+              </form>
+              {error && <div className="alert alert-warning py-1 mb-2">{error}</div>}
+              <ul className="list-group">
+                {tasks.length === 0 ? (
+                  <li className="list-group-item text-center text-secondary">タスクはありません</li>
+                ) : (
+                  tasks.map((task, idx) => (
+                    <li key={task.id} className="list-group-item d-flex align-items-center justify-content-between">
+                      <span className={task.completed ? 'completed flex-grow-1' : 'flex-grow-1'} style={task.completed ? { color: '#6c757d' } : {}}>
+                        {task.text}
+                      </span>
+                      <button
+                        className={task.completed ? 'btn btn-outline-secondary btn-sm ms-2' : 'btn btn-outline-success btn-sm ms-2'}
+                        onClick={() => handleCompleteTask(task.id)}
+                      >
+                        {task.completed ? '未完了' : '完了'}
+                      </button>
+                      <button
+                        className="btn btn-outline-danger btn-sm ms-2"
+                        onClick={() => handleDeleteTask(task.id)}
+                      >削除</button>
+                    </li>
+                  ))
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <footer className="text-center py-3 bg-light border-top mt-4">
+        <small>株式会社ダミー・カンパニー | 〒123-4567 東京都千代田区1-2-3 | TEL: 03-1234-5678</small>
+      </footer>
+    </>
   );
 
 // （不要なグローバル定義を削除）
