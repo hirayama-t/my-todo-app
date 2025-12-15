@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 
 function App() {
-    // タスク完了/未完了切り替え処理
+    // タスク完了/未完了切り替え処理 
     const handleCompleteTask = (id) => {
       setTasks(tasks.map(task =>
         task.id === id ? { ...task, completed: !task.completed } : task
