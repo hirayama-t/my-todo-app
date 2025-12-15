@@ -2,6 +2,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 
+const varsion =  '1.0.1';
 
 function App() {
     // タスク完了/未完了切り替え処理 
