@@ -2,7 +2,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 
-const varsion =  '1.0.1';
+const version =  '1.0.1';
 
 function App() {
     // タスク完了/未完了切り替え処理 
@@ -54,6 +54,9 @@ function App() {
     <>
       <div className="bg-primary min-vh-100 py-5">
         <div className="container" style={{ maxWidth: 480 }}>
+          <div className="text-end text-muted small mb-1" style={{letterSpacing: '0.05em'}}>
+            バージョン: {version}
+          </div>
           <div className="card shadow">
             <div className="card-body">
               <h1 className="card-title text-center mb-4 text-primary">業務用Todo管理アプリ</h1>
@@ -99,9 +102,6 @@ function App() {
           </div>
         </div>
       </div>
-      <footer className="text-center py-3 bg-light border-top mt-4">
-        <small>株式会社ダミー・カンパニー | 〒123-4567 東京都千代田区1-2-3 | TEL: 03-1234-5678</small>
-      </footer>
     </>
   );
 
